@@ -1,0 +1,29 @@
+type Conta {
+    numeroConta: Int!
+    agencia: Int!
+    nomeCliente: String!
+    saldo: Int!
+    saque: Int!
+    deposito: Int!
+
+}
+
+
+type Query {
+   contasAtivas: [Conta!]!
+   saldo(numeroConta: Int!): Conta 
+}
+
+type Mutation {
+  criarConta(numeroConta: Int!, agencia: Int!, nomeCliente: String!, saldo: Int!): Conta 
+  sacar(numeroConta: Int!, saque: Int!): Conta
+  depositar(numeroConta: Int!, deposito: Int!): Conta     
+}
+
+
+
+
+
+
+
+
